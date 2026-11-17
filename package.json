@@ -1,7 +1,7 @@
 {
   "name": "@ai-agent-context/agent-context-coding",
-  "version": "0.1.0",
-  "description": "Install the software engineering context and coding skills into the current project.",
+  "version": "0.2.0",
+  "description": "Install always-on Core instructions plus software engineering context and coding skills.",
   "type": "module",
   "bin": {
     "agent-context-coding": "./bin/install.mjs"
@@ -23,6 +23,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@ai-agent-context/agent-context-core": ">=0.1.0"
+    "@ai-agent-context/agent-context-core": ">=0.2.0"
   }
 }
