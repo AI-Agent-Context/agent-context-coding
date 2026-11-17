@@ -1,7 +1,7 @@
 {
   "name": "@ai-agent-context/agent-context-coding",
   "version": "0.2.0",
-  "description": "Install always-on Core instructions plus software engineering context and coding skills.",
+  "description": "Install shared Core context plus software engineering context and coding skills.",
   "type": "module",
   "bin": {
     "agent-context-coding": "./bin/install.mjs"
