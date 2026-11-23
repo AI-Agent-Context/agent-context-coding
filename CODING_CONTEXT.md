@@ -15,7 +15,6 @@ This document provides domain-specific standards for **Software Engineering and 
 - **Readability**: Code should be clear, intentional, and self-documenting.
 - **Consistency**: Follow existing conventions, naming styles, and patterns in the repository.
 - **Simplicity**: Prefer straightforward, simple solutions over speculative or over-engineered abstractions. Do not create abstractions for single-use code.
-- **Minimal Surface**: If 50 lines cleanly solve the problem, do not write 200 lines.
 
 ### Error Handling
 
@@ -33,36 +32,13 @@ This document provides domain-specific standards for **Software Engineering and 
 
 ## Code Changes
 
-- **Minimal changes**: Only modify what is strictly necessary to fulfill the authorized task.
-- **Follow existing patterns**: Adhere to existing architectural style, directory layout, and language idiom.
-- **Surgical edits**: Do not reformat, refactor, or "improve" adjacent or orthogonal code outside the task scope.
-- **Clean up own orphans**: Remove unused imports, variables, or functions created by your changes, but do not remove pre-existing dead code without authorization.
-- **No unrequested refactoring**: Never modify, format, or restructure existing code outside the approved task.
+- Make the smallest complete change within the authorized scope. Follow the repository's design and avoid unrelated edits.
+- Remove imports, variables, or functions made unused by your changes. Report pre-existing dead code when relevant.
 
----
+## Repository Investigation
 
-## Testing & Verification Rule
+When a task requires tracing relationships across components and the project has a relevant Graphify graph, use the bundled Graphify skill to narrow the source search. Confirm important findings against the source and use focused source searches when the graph is unavailable or insufficient.
 
-- Run checks and tests directly relevant to the change before reporting completion.
-- Run the full test suite when required by the project context or before major integration.
-- If a check fails:
-  1. Diagnose the root cause.
-  2. Fix it within the authorized scope when possible.
-  3. Otherwise, report the failure and blocker clearly with exact error logs and reproduction steps.
-- Distinguish test results clearly: `passed`, `failed`, `not run`, `blocked`, and `pre-existing failures`.
-- Do not claim a pass, commit, or push while required checks fail or remain blocked. Pre-existing failures are not an automatic exemption.
+## Verification
 
----
-
-## Git Workflow for Code
-
-- Staged changes must be thoroughly reviewed with `git diff --staged` before committing.
-- Commit messages must follow **Conventional Commits**:
-  - `feat`: New feature
-  - `fix`: Bug fix
-  - `docs`: Documentation changes
-  - `refactor`: Code refactoring (no functional change)
-  - `test`: Adding or updating tests
-  - `style`: Code style / formatting changes
-  - `chore`: Maintenance, dependencies, build config
-- Never commit secrets, tokens, `.env` files, credentials, or private keys.
+Follow the verification and Git rules in GLOBAL_WORKING_CONTEXT.md. Apply the project's requirements for broader checks and distinguish passed, failed, not run, blocked, and pre-existing failures.

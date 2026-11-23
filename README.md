@@ -23,6 +23,7 @@ The package installs all of these skills:
 | Skill | What it does |
 |---|---|
 | `diagnose-bug` | Investigates a reported bug, verifies its root cause, and checks an authorized fix. |
+| `graphify` | Builds or queries a local code graph to locate relevant source. |
 | `implement-feature` | Implements an agreed feature and verifies its acceptance criteria. |
 | `karpathy-guidelines` | Keeps coding work simple, focused, and explicit about assumptions. |
 | `optimize-performance` | Measures a performance bottleneck and checks an optimization against a baseline. |
@@ -57,3 +58,13 @@ To copy only the shared Global Working Context, run:
     npx @ai-agent-context/agent-context-core
 
 This does not install `CODING_CONTEXT.md` or coding skills.
+
+## Use Graphify
+
+The Coding installer includes the Graphify skill. Install the [official Graphify CLI](https://github.com/Graphify-Labs/graphify) separately when needed.
+
+```sh
+uv tool install graphifyy
+```
+
+From the project root, query an existing graph with `graphify query "<question>"`. To build a local graph of the project's code, use `graphify extract . --code-only`. Open the relevant source to verify important relationships and use targeted source searches when the graph is unavailable or incomplete. See the [Graphify skill](skills/graphify/SKILL.md) for details.
