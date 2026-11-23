@@ -37,15 +37,7 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 
 **Touch only what you must. Clean up only your own mess.**
 
-When editing existing code:
-- Do not "improve" adjacent code, comments, or formatting.
-- Do not refactor things that are not broken.
-- Match existing style, even if you would do it differently.
-- If you notice unrelated dead code, mention it in the report — do not delete it.
-
-When changes create orphans:
-- Remove imports, variables, or functions that your changes made unused.
-- Do not remove pre-existing dead code unless explicitly requested.
+Apply the Code Changes rules in the Coding Working Context.
 
 The test: Every changed line must trace directly to the authorized user request.
 
